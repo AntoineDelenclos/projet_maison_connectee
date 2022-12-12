@@ -4,7 +4,7 @@ CREATE DATABASE IF NOT EXISTS Maison_Connect;
 
 USE Maison_Connect; 
 
-
+A
 CREATE TABLE UTILISATEUR ( 
 
     Id_user INT(11) NOT NULL AUTO_INCREMENT, 
