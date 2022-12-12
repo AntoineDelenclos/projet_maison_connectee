@@ -4,7 +4,7 @@ CREATE DATABASE IF NOT EXISTS Maison_Connect;
 
 USE Maison_Connect; 
 
-A
+
 CREATE TABLE UTILISATEUR ( 
 
     Id_user INT(11) NOT NULL AUTO_INCREMENT, 
@@ -82,7 +82,7 @@ CREATE TABLE SUBSTANCE (
 
     Ideal_subtance FLOAT(15) NOT NULL, 
 
-    PRIMARY KEY (Id_subtance) 
+    PRIMARY KEY (Id_substance) 
 
 ); 
 
@@ -99,11 +99,7 @@ CREATE TABLE MAISON(
 
     Eva_eco VARCHAR(50) NOT NULL, 
 
-    PRIMARY KEY (Id_maison), 
-
-    --FOREIGN KEY (IdRep) REFERENCES REPRESENTANT (IdRep), 
-
-    --FOREIGN KEY (IdClient) REFERENCES CLIENT (IdClient) 
+    PRIMARY KEY (Id_maison)
 
 ); 
 
@@ -121,9 +117,7 @@ CREATE TABLE APPARTEMENT(
 
     Libel_appart VARCHAR(50) NOT NULL,
 
-    PRIMARY KEY (Id_appart), 
-
-    --FOREIGN KEY (IdCmd) REFERENCES COMMANDE (IdCmd) 
+    PRIMARY KEY (Id_appart)
 
 ); 
 
@@ -139,10 +133,6 @@ CREATE TABLE APPAREIL (
 
     Libel_appareil VARCHAR(50) NOT NULL,
 
-    --FOREIGN KEY (IdCmd) REFERENCES COMMANDE (IdCmd), 
-
-    --FOREIGN KEY (IdProd) REFERENCES PRODUIT (IdProd), 
-
     PRIMARY KEY(Id_appareil) 
 
 ); 
@@ -155,10 +145,6 @@ CREATE TABLE LOCATION (
     Debut_location DATE NOT NULL, 
 
     Fin_location DATE NOT NULL, 
-
-    --FOREIGN KEY (IdProd) REFERENCES PRODUIT (IdProd), 
-
-    --FOREIGN KEY (IdFact) REFERENCES FACTURE (IdFact);
 
     PRIMARY KEY(Id_location)
 
