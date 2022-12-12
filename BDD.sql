@@ -115,7 +115,7 @@ CREATE TABLE APPARTEMENT(
 
     Type_appart VARCHAR(50) NOT NULL,
 
-    Libel_appart VARCHAR(50) NOT NULL,
+    Libel_piece VARCHAR(50) NOT NULL,
 
     Debut_possession DATE NOT NULL,
 
@@ -125,7 +125,11 @@ CREATE TABLE APPARTEMENT(
 
     Fin_location DATE NOT NULL,
 
-    PRIMARY KEY (Id_appart)
+    Id_maison INT(11) NOT NULL AUTO_INCREMENT,
+
+    PRIMARY KEY (Id_appart),
+
+    FOREIGN KEY (Id_maison) REFERENCES MAISON (Id_maison)
 
 ); 
 
@@ -167,4 +171,18 @@ CREATE TABLE POSSESSION(
     Fin_possession DATE NOT NULL,
 
     PRIMARY KEY (Id_possession)
+);
+
+CREATE TABLE EMISSION(
+
+    Id_ressource INT(11) NOT NULL,
+
+    Id_substance INT(11) NOT NULL,
+
+    FOREIGN KEY (Id_ressource) REFERENCES RESSOURCE (Id_ressource),
+
+    FOREIGN KEY (Id_substance) REFERENCES SUBSTANCE (Id_substance),
+
+    PRIMARY KEY (Id_ressource,Id_substance)
+
 );
