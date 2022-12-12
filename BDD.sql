@@ -117,6 +117,14 @@ CREATE TABLE APPARTEMENT(
 
     Libel_appart VARCHAR(50) NOT NULL,
 
+    Debut_possession DATE NOT NULL,
+
+    Fin_possession DATE NOT NULL,
+
+    Debut_location DATE NOT NULL,
+
+    Fin_location DATE NOT NULL,
+
     PRIMARY KEY (Id_appart)
 
 ); 
