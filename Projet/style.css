@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+}
+
+header{
+    text-align: center;
+	font-size: 200%;
+	padding: 10px;
+	background-color: rgb(107, 165, 107);
+}
+
+label{
+    text-align: center;
+    font-size: 125%;
+    padding: 20px;
+    color: rgb(220, 38, 38);
+}
+
+footer{
+	text-align: center;
+	padding: 20px;
+	background-color: rgb(107, 165, 107);
+	color: white;
+}
+
+.chatbox{
+    text-align: center;
+}
