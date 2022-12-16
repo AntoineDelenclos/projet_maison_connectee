@@ -25,6 +25,8 @@ CREATE TABLE UTILISATEUR (
 
     Etat_cpt VARCHAR(50) NOT NULL,
 
+    Mot_de_passe VARCHAR(100) NOT NULL,
+
     Date_creation_cpt DATE NOT NULL,
 
     PRIMARY KEY (Id_user) 
@@ -97,7 +99,7 @@ CREATE TABLE MAISON(
 
     Nb_appart INT(11) NOT NULL,
 
-    Eva_eco VARCHAR(50) NOT NULL, 
+    Eva_eco VARCHAR(50) NOT NULL,
 
     PRIMARY KEY (Id_maison)
 
@@ -117,19 +119,29 @@ CREATE TABLE APPARTEMENT(
 
     Libel_piece VARCHAR(50) NOT NULL,
 
-    Debut_possession DATE NOT NULL,
+    Id_adresse INT(11) NOT NULL,
 
-    Fin_possession DATE NOT NULL,
+    Id_maison INT(11) NOT NULL,
 
-    Debut_location DATE NOT NULL,
+    Id_user INT(11) NOT NULL,
 
-    Fin_location DATE NOT NULL,
+    Id_possession INT(11) NOT NULL,
 
-    Id_maison INT(11) NOT NULL AUTO_INCREMENT,
+    Id_location INT(11) NOT NULL,
 
-    PRIMARY KEY (Id_appart),
+    FOREIGN KEY (Id_adresse) REFERENCES ADRESSE (Id_adresse),
 
-    FOREIGN KEY (Id_maison) REFERENCES MAISON (Id_maison)
+    FOREIGN KEY (Id_maison) REFERENCES MAISON (Id_maison),
+
+    FOREIGN KEY (Id_user) REFERENCES UTILISATEUR (Id_user),
+
+    FOREIGN KEY (Id_possession) REFERENCES POSSESSION (Id_possession),
+
+    FOREIGN KEY (Id_location) REFERENCES LOCATION (Id_location),
+
+    PRIMARY KEY (Id_appart)
+
+    
 
 ); 
 
@@ -145,6 +157,10 @@ CREATE TABLE APPAREIL (
 
     Libel_appareil VARCHAR(50) NOT NULL,
 
+    Id_appart INT(11) NOT NULL,
+
+    FOREIGN KEY (Id_appart) REFERENCES APPARTEMENT (Id_appart),
+
     PRIMARY KEY(Id_appareil) 
 
 ); 
@@ -156,7 +172,9 @@ CREATE TABLE LOCATION (
 
     Debut_location DATE NOT NULL, 
 
-    Fin_location DATE NOT NULL, 
+    Fin_location DATE NOT NULL,
+
+    
 
     PRIMARY KEY(Id_location)
 
@@ -185,4 +203,17 @@ CREATE TABLE EMISSION(
 
     PRIMARY KEY (Id_ressource,Id_substance)
 
+);
+
+CREATE TABLE UTILISATION(
+
+    Id_ressource INT(11) NOT NULL,
+
+    Id_appareil INT(11) NOT NULL,
+
+    FOREIGN KEY (Id_ressource) REFERENCES RESSOURCE (Id_ressource),
+
+    FOREIGN KEY (Id_appareil) REFERENCES APPAREIL (Id_appareil),
+
+    PRIMARY KEY (Id_ressource,Id_appareil)
 );
