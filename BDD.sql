@@ -5,6 +5,7 @@ CREATE DATABASE IF NOT EXISTS Maison_Connect;
 USE Maison_Connect; 
 
 
+
 CREATE TABLE UTILISATEUR ( 
 
     Id_user INT(11) NOT NULL AUTO_INCREMENT, 
@@ -19,7 +20,7 @@ CREATE TABLE UTILISATEUR (
 
     Tel VARCHAR(50) NOT NULL,
 
-    Genre VARCHAR(50) NOT NULL,
+    Genre BOOLEAN NOT NULL,
 
     Est_admin BOOLEAN NOT NULL,
 
@@ -33,7 +34,7 @@ CREATE TABLE UTILISATEUR (
 
 ); 
 
- 
+
 
 CREATE TABLE ADRESSE ( 
 
@@ -50,6 +51,7 @@ CREATE TABLE ADRESSE (
     PRIMARY KEY (Id_adresse) 
 
 ); 
+
 
 
 CREATE TABLE RESSOURCE ( 
@@ -70,6 +72,8 @@ CREATE TABLE RESSOURCE (
 
 );
 
+
+
 CREATE TABLE SUBSTANCE ( 
 
     Id_substance INT(11) NOT NULL AUTO_INCREMENT, 
@@ -89,6 +93,7 @@ CREATE TABLE SUBSTANCE (
 ); 
 
 
+
 CREATE TABLE MAISON( 
 
     Id_maison INT(11) NOT NULL AUTO_INCREMENT, 
@@ -103,7 +108,50 @@ CREATE TABLE MAISON(
 
     PRIMARY KEY (Id_maison)
 
+);  
+  
+
+
+CREATE TABLE LOCATION( 
+
+    Id_location INT(11) NOT NULL AUTO_INCREMENT, 
+
+    Debut_location DATE NOT NULL, 
+
+    Fin_location DATE NOT NULL,
+
+    PRIMARY KEY(Id_location)
+
 ); 
+
+
+
+CREATE TABLE POSSESSION(
+
+    Id_possession INT(11) NOT NULL AUTO_INCREMENT,
+
+    Debut_possession DATE NOT NULL,
+
+    Fin_possession DATE NOT NULL,
+
+    PRIMARY KEY (Id_possession)
+);
+
+
+
+CREATE TABLE EMISSION(
+
+    Id_ressource INT(11) NOT NULL,
+
+    Id_substance INT(11) NOT NULL,
+
+    FOREIGN KEY (Id_ressource) REFERENCES RESSOURCE (Id_ressource),
+
+    FOREIGN KEY (Id_substance) REFERENCES SUBSTANCE (Id_substance),
+
+    PRIMARY KEY (Id_ressource,Id_substance)
+
+);
 
 
 
@@ -141,11 +189,9 @@ CREATE TABLE APPARTEMENT(
 
     PRIMARY KEY (Id_appart)
 
-    
+);
 
-); 
 
-  
 
 CREATE TABLE APPAREIL ( 
 
@@ -163,47 +209,9 @@ CREATE TABLE APPAREIL (
 
     PRIMARY KEY(Id_appareil) 
 
-); 
-  
-
-CREATE TABLE LOCATION ( 
-
-    Id_location INT(11) NOT NULL AUTO_INCREMENT, 
-
-    Debut_location DATE NOT NULL, 
-
-    Fin_location DATE NOT NULL,
-
-    
-
-    PRIMARY KEY(Id_location)
-
-); 
-
-CREATE TABLE POSSESSION(
-
-    Id_possession INT(11) NOT NULL AUTO_INCREMENT,
-
-    Debut_possession DATE NOT NULL,
-
-    Fin_possession DATE NOT NULL,
-
-    PRIMARY KEY (Id_possession)
 );
 
-CREATE TABLE EMISSION(
 
-    Id_ressource INT(11) NOT NULL,
-
-    Id_substance INT(11) NOT NULL,
-
-    FOREIGN KEY (Id_ressource) REFERENCES RESSOURCE (Id_ressource),
-
-    FOREIGN KEY (Id_substance) REFERENCES SUBSTANCE (Id_substance),
-
-    PRIMARY KEY (Id_ressource,Id_substance)
-
-);
 
 CREATE TABLE UTILISATION(
 
