@@ -8,17 +8,19 @@ USE Maison_Connect;
 
 CREATE TABLE UTILISATEUR ( 
 
-    Id_user INT(11) NOT NULL AUTO_INCREMENT, 
+    Id_user INT(11) NOT NULL AUTO_INCREMENT,
 
     Nom VARCHAR(50) NOT NULL, 
 
-    Prenom VARCHAR(60) NOT NULL, 
+    Prenom VARCHAR(50) NOT NULL,
+
+    Nom_utilisateur VARCHAR(50) NOT NULL,
 
     Date_naissance DATE NOT NULL, 
 
     Email VARCHAR(50) NOT NULL,
 
-    Tel VARCHAR(50) NOT NULL,
+    Tel VARCHAR(50),
 
     Genre BOOLEAN NOT NULL,
 
@@ -84,9 +86,9 @@ CREATE TABLE SUBSTANCE (
 
     Max_substance FLOAT(15) NOT NULL,
 
-    Crit_subtance FLOAT(15) NOT NULL,
+    Crit_substance FLOAT(15) NOT NULL,
 
-    Ideal_subtance FLOAT(15) NOT NULL, 
+    Ideal_substance FLOAT(15) NOT NULL, 
 
     PRIMARY KEY (Id_substance) 
 
