@@ -18,8 +18,8 @@ mysqli_query($con,$sql);
 
 
 <body>
+    
     <?php echo "Connection success";?>
-
 
         <header>
             <a href="index.php">

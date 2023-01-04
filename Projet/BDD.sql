@@ -16,21 +16,21 @@ CREATE TABLE UTILISATEUR (
 
     Nom_utilisateur VARCHAR(50) NOT NULL,
 
-    Date_naissance DATE NOT NULL, 
+    Date_naissance DATE, 
 
-    Email VARCHAR(50) NOT NULL,
+    Email VARCHAR(50),
 
     Tel VARCHAR(50),
 
-    Genre BOOLEAN NOT NULL,
+    Genre BOOLEAN,
 
-    Est_admin BOOLEAN NOT NULL,
+    Est_admin BOOLEAN,
 
-    Etat_cpt VARCHAR(50) NOT NULL,
+    Etat_cpt VARCHAR(50),
 
     Mot_de_passe VARCHAR(100) NOT NULL,
 
-    Date_creation_cpt DATE NOT NULL,
+    Date_creation_cpt DATE,
 
     PRIMARY KEY (Id_user) 
 
