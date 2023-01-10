@@ -1,4 +1,3 @@
-<?php session_start();?>
 <?php include 'bdd_connect.php';?>
 
 <?php
@@ -19,47 +18,67 @@ mysqli_query($con,$sql);
 
 
 <body>
-    
-    <?php echo "Connection success";?>
-    
+    <?php echo "Connection success";?> 
 
         <header>
             <a href="index.php">
-                <p>Maison Connectée</p>
+                <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3oyqAttjnPCAISffV7MCcRjmDWCv-BGP5-A&usqp=CAU" alt="Girl in a jacket" width="60" height="60"></p>
             </a>
-            <p id="horloge"><?php echo date ('d/m/Y H:i:s'); ?></p>
+            <!--<p id="horloge"><?php echo date ('d/m/Y H:i:s'); ?></p> -->
+
+            <div id="wrap">
+    <nav>
+      <ul class="menu">
+        <li>
+        <a href="index.php">
+                <p>Accueil</p>
+        </a>
+          <ul class="sub-menu">
+            <li>
+                <a href="login.php">
+                <button id="Connect_index" type="button">Se connecter</button>
+                </a>  
+            </li>
+            <li>
+                <a href="sign_in.php">
+                <button id="Sign_in_index" type="button">S'inscrire</button>
+                </a>  
+            </li>
+            <li>
+                <a href="debug.php">
+                <button id="Debug_page" type="button">Debug</button>
+                </a>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+    </nav>
+</div>
+            
+
+            
+            
         </header>
     
 
     <div>
 
-        <a href="login.php">
-            <button id="Connect_index" type="button">Se connecter</button>
-        </a>
-
-        <a href="sign_in.php">
-            <button id="Sign_in_index" type="button">S'inscrire</button>
-        </a>
-
-        <a href="disconnect.php">
-            <button id="Disconnect_index" type="button">Déconnexion</button>
-        </a>
-
-        <a href="profile_page.php">
-            <button id="Profile_page_index" type="button">Profil</button>
-        </a>
-
-        <a href="debug.php">
-            <button id="Debug_page" type="button">Debug</button>
-        </a>
+       
     
     <p>Ceci est du PHP : <?php echo("test");?></p>
         
     </div>
 
-    <footer>
+
+    
+
+
+
+    <!--<footer>
+        
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ratione rerum illum vero assumenda aperiam deserunt sequi ea repellendus, sint mollitia numquam. Maxime unde dolorum quam consequatur magni voluptas reprehenderit.
-    </footer>
+    </footer>-->
     
 </body>
 </html>

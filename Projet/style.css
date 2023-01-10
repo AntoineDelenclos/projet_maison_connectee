@@ -3,17 +3,116 @@
 }
 
 header{
-    text-align: center;
+  text-align: center;
 	font-size: 2em;
 	padding: 10px;
-	background-color: rgb(107, 165, 107);
+	
+
+  width: 100%;
+  height: 0px;
+  margin: 0;
+  z-index: 99;
+  position: relative;
+  /*background-color: rgb(143, 216, 149);
+  
+  text-align: center;*/
+}
+
+body{
+  background-color: rgb(247, 246, 236);
+
+
 }
 
 label{
     text-align: center;
     font-size: 1.25em;
     padding: 20px;
-    color: rgb(220, 38, 38);
+    color: rgb(65, 100, 165);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+#wrap {
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  z-index: 99;
+  position: relative;
+  background-color: #3f493c;
+}
+
+/*.menu {
+  background: url("https://img.freepik.com/vecteurs-libre/fond-vert-silhouettes-foret-https://img.freepik.com/free-photo/background-green-mountains-landscape-illustration_53876-105316.jpg?w=740&t=st=1673051897~exp=1673052497~hmac=26d4bc3f7f94308cc3c1c608f175a7e757fcfef6df2b6bb18a86adbdd89baf50-2148273942.jpg?w=740&t=st=1673051763~exp=1673052363~https://www.freepik.com/free-photo/background-green-mountains-landscape-illustration_15670135.htm#query=pastel%20green&position=34&from_view=keyword=41e2db903505b17d8292954d0056c93f68312af1b7a76538c56ac3eb3f516044");
+  background-size: auto;
+  min-height: 600px;
+  font-family: "Helvetica Neue", sans-serif;
+}*/
+nav {
+  text-align: center;
+  position: fixed;
+  /*bottom : -10px;*/
+  top: 130px;
+  right: 20px;
+}
+.menu {
+  display: inline-block;
+}
+.menu > li {
+  float: center;
+  color: #000208;
+  width: 140px;
+  height: 40px;
+  line-height: 40px;
+  background: rgb(124, 199, 161);
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.menu2 {
+  display: inline-block;
+}
+.menu2 > li {
+  float: center;
+  color: #000208;
+  width: 14px;
+  height: 40px;
+  line-height: 40px;
+  background: rgb(124, 199, 161);
+  cursor: pointer;
+  font-size: 17px;
+}
+.sub-menu {
+  transform: scale(0);
+  transform-origin: top center;
+  transition: all 300ms ease-in-out;
+}
+/*.sub-menu li {
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 8px 0;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transform: scale(0);
+  transform-origin: top center;
+  transition: all 300ms ease-in-out;
+}*/
+.sub-menu li:last-child {
+  border-bottom: 0;
+}
+/*.sub-menu li:hover {
+  background: black;
+}*/
+.menu > li:hover .sub-menu li {
+  transform: scale(1);
+}
+.menu > li:hover .sub-menu {
+  transform: scale(1);
 }
 
 footer{
@@ -21,10 +120,45 @@ footer{
     bottom: 0;
 	text-align: center;
 	padding: 20px;
-	background-color: rgb(107, 165, 107);
+	background-color: rgb(84, 160, 97);
 	color: rgb(46, 46, 46);
 }
 
+button {
+    display: block;
+    background-color: #5a9e95;
+    border-radius: 1px;
+    /*border: 4px double #cccccc;*/
+    color: #332f2f;
+    text-align: center;
+    font-size: 21px;
+    padding: 10px;
+    width: 140px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0px;
+  }
+
+
+  #Connect_index
+  {
+    border-radius: 8px;
+    float:right;
+  } 
+
+
+  button:hover {
+    background-color: rgb(205, 214, 188);
+  }
+
+
+  
+
+
 .chatbox{
     text-align: center;
+    
 }
