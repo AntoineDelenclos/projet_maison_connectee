@@ -1,33 +1,6 @@
-<?php
+<?php session_start();?>
+<?php include 'bdd_connect.php';?>
 
-$serverName = "localhost";
-$userName="root";
-$password="";
-$dbName="Maison_Connect";
-
-$con = mysqli_connect($serverName,$userName,$password,$dbName);
-
-if(mysqli_connect_errno()){
-    echo "Failed to connect";
-    exit();
-}
-echo "Connection success";
-
-//Requête de test : on arrive bien à faire des SELECT mais il y a un problème (page blanche et pas d'insertion) avec la requête INSERT INTO
-$sql2 = "SELECT * FROM SUBSTANCE";
-
-if ($result2=mysqli_query($con,$sql2)){
-    while ($row = mysqli_fetch_assoc($result2)){
-        echo " Nom_substance : ".$row['Nom_substance'];
-    }
-}
-else{
-    echo "Error :". $sql2. "<br>". mysqli_error($con);
-}
-
-mysqli_close($con);
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,18 +22,22 @@ mysqli_close($con);
     </a>
 
     <div>
+        
         <p>Veuillez bien vous connecter</p>
-        <label for="Username">Nom d'utilisateur</label>
-        <input class="chatbox" type="text" id="Username" name="Username" autofocus required placeholder="Nom d'utilisateur" size="15">
-        <br>
-        <label for="Password">Mot de passe</label>
-        <input class="chatbox" type="password" id="Password" name="Password" required placeholder="Mot de passe" size="15">
+        <form method="POST" action="login_treatment.php">
+            <fieldset>
+                <label for="uid">Nom d'utilisateur</label>
+                <input class="chatbox" type="text" id="uid" name="uid" autofocus required placeholder="Nom d'utilisateur" size="15">
+                <br>
+                <label for="pwd">Mot de passe</label>
+                <input class="chatbox" type="password" id="pwd" name="pwd" required placeholder="Mot de passe" size="15">
 
-        <button type="button" id="eye">Afficher</button>
-        <br>
-        <a href="index.php">
-            <button id="Connect_button" type="button">Connexion</button>
-        </a>
+                <button type="button" id="eye">Afficher</button>
+                <br>
+            </fieldset>
+
+            <button type="submit" name="submit">Connexion</button>
+        </form>
         
 
     </div>
