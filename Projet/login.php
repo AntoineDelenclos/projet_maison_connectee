@@ -1,6 +1,6 @@
 <?php session_start();?>
 <?php include 'bdd_connect.php';?>
-
+<?php include 'header_page.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,9 +42,9 @@
 
     </div>
 
-    <footer>
+    <!--<footer>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ratione rerum illum vero assumenda aperiam deserunt sequi ea repellendus, sint mollitia numquam. Maxime unde dolorum quam consequatur magni voluptas reprehenderit.
-    </footer>
+    </footer>-->
     
 </body>
 </html>

@@ -1,5 +1,7 @@
+
 <?php session_start();?>
 <?php include 'bdd_connect.php';?>
+<?php include 'header_page.php';?>
 
 
 <!DOCTYPE html>
@@ -41,7 +43,7 @@
 
     <a href="index.php">
         <header>
-            <p>Maison Connectée</p>
+            
         </header>
     </a>
 

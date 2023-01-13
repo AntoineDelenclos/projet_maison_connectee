@@ -1,5 +1,6 @@
-<?php session_start();?>
 <?php include 'bdd_connect.php';?>
+<?php include 'header_page.php';?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,13 +17,17 @@
 
 <body>
 
-    <a href="index.php">
         <header>
-            <p>Maison Connectée</p>
-        </header>
-    </a>
+            
 
-    <div>
+        </header>
+
+       
+
+    
+
+
+    <div >
         <p>Formulaire d'inscription</p>
         <form method="POST" action="submit_treatment.php"> <!--action va permettre de rediriger vers une page après envoie du formulaire-->
             
@@ -81,15 +86,16 @@
                 <button type="button" id="eye">Afficher</button>
                
             </fieldset>
-            <?php $_SESSION['uid']="Moi";?>
+
             <button type="submit" name="submit">Valider et créer le compte</button> <!--Utilise la methode décrite dans form-->
         </form>
         <p>Les champs avec la mention (*) sont obligatoires pour finaliser l'inscription</p>
     </div>
 
-    <footer>
+    <!--<footer>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ratione rerum illum vero assumenda aperiam deserunt sequi ea repellendus, sint mollitia numquam. Maxime unde dolorum quam consequatur magni voluptas reprehenderit.
-    </footer>
+    </footer>-->
     
 </body>
 </html>
+       
