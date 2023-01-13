@@ -34,6 +34,9 @@
 
                 <button type="button" id="eye">Afficher</button>
                 <br>
+                <br>
+                <input type="reset" id="reset_l" value="Réinitialisation du formulaire de connexion">
+                
             </fieldset>
 
             <button type="submit" name="submit">Connexion</button>
