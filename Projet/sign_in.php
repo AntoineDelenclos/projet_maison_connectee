@@ -79,6 +79,9 @@
                 <label for="cfrm_pwd">Confirmer votre mot de passe</label>
                 <input class="chatbox" type="password" id="cfrm_pwd" name="cfrm_pwd" required placeholder="Confirmer" size="15">
                 <button type="button" id="eye">Afficher</button>
+                <br>
+                <br>
+                <input type="reset" id="reset_s" value="Réinitialisation du formulaire d'inscription">
                
             </fieldset>
             <?php $_SESSION['uid']="Moi";?>
