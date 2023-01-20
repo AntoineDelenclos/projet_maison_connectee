@@ -14,32 +14,33 @@
 </head>
 
 
+
 <body>
-    <a href="index.php">
-    <header>
-        <p>Maison Connectée</p>
-    </header>
-    </a>
+    
 
     <div>
         
-        <p>Veuillez bien vous connecter</p>
+        <p1_login>Veuillez bien vous connecter</p1_login>
+        
+        
         <form method="POST" action="login_treatment.php">
-            <fieldset>
-                <label for="uid">Nom d'utilisateur</label>
+            <fieldset id="login_page">
+                
                 <input class="chatbox" type="text" id="uid" name="uid" autofocus required placeholder="Nom d'utilisateur" size="15">
                 <br>
-                <label for="pwd">Mot de passe</label>
+                
                 <input class="chatbox" type="password" id="pwd" name="pwd" required placeholder="Mot de passe" size="15">
 
                 <button type="button" id="eye">Afficher</button>
                 <br>
+                <br>
+                <input type="reset" id="reset_l" value="Réinitialisation">
+                
             </fieldset>
 
-            <button type="submit" name="submit">Connexion</button>
+            <button type="submit" id="submit">Connexion</button>
         </form>
         
-
     </div>
 
     <!--<footer>

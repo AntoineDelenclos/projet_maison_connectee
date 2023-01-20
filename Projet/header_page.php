@@ -29,7 +29,7 @@
                 <ul class="menu">
                     <li>
 
-                    PARAM
+                    <button id="HOME" type="button">HOME</button>
                         
                     <ul class="sub-menu">
                         <li>

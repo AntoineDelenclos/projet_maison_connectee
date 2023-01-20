@@ -1,4 +1,4 @@
-<?php session_start();?>
+?php session_start();?>
 <?php include 'bdd_connect.php';?>
 
 
@@ -37,5 +37,4 @@ if ($uid==$_SESSION['uid']){
 }
 
 ?>
-
 

@@ -195,6 +195,27 @@ CREATE TABLE APPARTEMENT(
 
 
 
+CREATE TABLE IMAGES(
+
+    Id_image INT(11) NOT NULL AUTO_INCREMENT,
+
+    Nom_image VARCHAR(50) NOT NULL,
+
+    Taille_image VARCHAR(25) NOT NULL,
+
+    Type_image VARCHAR(25) NOT NULL,
+
+    Descript_image VARCHAR(100) NOT NULL,
+
+    Blob_image BLOB NOT NULL,
+
+    Ajout_image DATE NOT NULL,
+
+    PRIMARY KEY (Id_image)
+);
+
+
+
 CREATE TABLE APPAREIL ( 
 
     Id_appareil INT(11) NOT NULL AUTO_INCREMENT, 
