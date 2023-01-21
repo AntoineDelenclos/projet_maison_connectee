@@ -157,6 +157,31 @@ CREATE TABLE EMISSION(
 
 
 
+CREATE TABLE IMAGES(
+
+    Id_image INT(11) NOT NULL AUTO_INCREMENT,
+
+    Nom_image VARCHAR(50) NOT NULL,
+
+    Taille_image VARCHAR(25),
+
+    Type_image VARCHAR(25),
+
+    Descript_image VARCHAR(100),
+
+    Blob_image BLOB,
+
+    Id_user INT(11) NOT NULL,
+
+    Ajout_image DATE NOT NULL,
+
+    FOREIGN KEY (Id_user) REFERENCES UTILISATEUR (Id_user),
+
+    PRIMARY KEY (Id_image)
+);
+
+
+
 CREATE TABLE APPARTEMENT( 
 
     Id_appart INT(11) NOT NULL AUTO_INCREMENT, 
@@ -167,17 +192,19 @@ CREATE TABLE APPARTEMENT(
 
     Type_appart VARCHAR(50) NOT NULL,
 
-    Libel_piece VARCHAR(50) NOT NULL,
+    Libel_piece VARCHAR(50),
 
-    Id_adresse INT(11) NOT NULL,
+    Id_adresse INT(11),
 
-    Id_maison INT(11) NOT NULL,
+    Id_maison INT(11),
 
-    Id_user INT(11) NOT NULL,
+    Id_user INT(11),
 
-    Id_possession INT(11) NOT NULL,
+    Id_possession INT(11),
 
-    Id_location INT(11) NOT NULL,
+    Id_location INT(11),
+
+    Id_image INT(11),
 
     FOREIGN KEY (Id_adresse) REFERENCES ADRESSE (Id_adresse),
 
@@ -188,6 +215,8 @@ CREATE TABLE APPARTEMENT(
     FOREIGN KEY (Id_possession) REFERENCES POSSESSION (Id_possession),
 
     FOREIGN KEY (Id_location) REFERENCES LOCATION (Id_location),
+
+    FOREIGN KEY (Id_image) REFERENCES IMAGES (Id_image),
 
     PRIMARY KEY (Id_appart)
 
