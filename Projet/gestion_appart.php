@@ -71,7 +71,7 @@
                         //echo "projet_maison_connectee/plans_appart".DIRECTORY_SEPARATOR."User_".basename($Id_user)."_Plan_appart_2".".png";
                         ?></td>
                         <td><a href="modif_appart.php">
-                            <?php $_SESSION['id_app']=$cnt;?>
+                            <?php $_SESSION['id_app']=$row["Id_appart"];?>
                                 <button id="modif" type="submit">Modifier</button>
                             </a>
                             <br>
