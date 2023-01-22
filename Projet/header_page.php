@@ -1,6 +1,6 @@
 <?php include 'bdd_connect.php';?>
 
-<div id="wrap"><div>
+<!--<div id="wrap"><div>
 
             <a href="index.php">
                 <p><img src="https://particulier.edf.fr/content/dam/image/travaux/suivi-conso.png" ></p>
@@ -23,7 +23,6 @@
             <button id="Mon_logement" type="button">Mon logement</button>
             </a>
 
-            
             
             <div id="wrap2">
                 <ul class="menu">
@@ -56,9 +55,29 @@
                     </li>
 
                 </ul>
-            </div>
+            </div>-->
 
 
 
 
-            </nav>
+
+            <!--</nav>-->
+
+
+
+
+            <div class="navbar">
+
+           
+  <div class="dropdown">
+    <button class="dropbtn">Menu
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+    <a href="login.php">Connexion</a>
+    <a href="sign_in.php">S'inscrire</a>
+    <a href="disconnect.php">Deconnexion</a>
+    
+    </div>
+  </div>
+</div> 

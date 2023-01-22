@@ -22,7 +22,7 @@
 
         </header>
 
-    <div >
+    <div style="overflow-x: hidden; overflow-y: scroll; " >
         <p_form>Formulaire d'inscription</p_form>
         <form method="POST" action="submit_treatment.php"> <!--action va permettre de rediriger vers une page après envoie du formulaire-->
             
@@ -38,7 +38,7 @@
                 <input class="chatbox" type="text" id="last_name" name="last_name" required placeholder="Nom de famille" size="20">
                 <br>
 
-                <label for="birth_date">Date de naissance (*)</label>
+                <label for="birth_date">DOB (*)</label>
                 <input class="datebox" type="date" id="birth_date" name="birth_date" required size="25">
                 <br>
 
@@ -64,27 +64,7 @@
             
                 <input class="Chatbox" type="tel" id="Tel" name="Tel" placeholder="Numéro de téléphone" size="15">
 
-                  
-                <input class="chatbox" type="text" id="num_maison" name="num_maison" required placeholder="N°" size="20">
-    
-                <br>
-
-                <input class="chatbox" type="text" id="Rue" name="Rue" required placeholder="Rue" size="20">
-    
-                <br>
-
-                <input class="chatbox" type="text" id="CP" name="CP" required placeholder="CP" size="20">
-    
-                <br>
-
-                <input class="chatbox" type="text" id="Ville" name="Ville" required placeholder="Ville" size="20">
-    
-                <br>
-
-                
-    
-    <br>
-                     
+               
             </fieldset>
             
             <fieldset id="compte">
@@ -96,19 +76,19 @@
                 <br>
 
                
-                <input class="chatbox" type="password" id="pwd" name="pwd" required placeholder="Mot de passe" size="15">
+                <input class="chatbox" type="password" id="pwd" name="pwd_s" required placeholder="Mot de passe" size="15">
                 <br>
 
                 
                 <input class="chatbox" type="password" id="cfrm_pwd" name="cfrm_pwd" required placeholder="Confirmer mot de passe" size="15">
-                <button type="button" id="eye_s">Afficher</button>
-                <br>
-                <br>
+                
                 <input type="reset" id="reset_s" value="Réinitialisation">
+
+                <button type="submit" id="submit2">Valider et créer le compte</button>
                
             </fieldset>
 
-            <button type="submit" id="submit2">Valider et créer le compte</button><!--Utilise la methode décrite dans form-->
+            <!--Utilise la methode décrite dans form-->
         </form>
        <!-- <p_footer>Les champs avec la mention (*) sont obligatoires pour finaliser l'inscription</p_footer>-->
     </div>

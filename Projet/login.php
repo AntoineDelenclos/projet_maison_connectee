@@ -32,13 +32,15 @@
                 <input class="chatbox" type="password" id="pwd" name="pwd" required placeholder="Mot de passe" size="15">
 
                 <button type="button" id="eye">Afficher</button>
-                <br>
-                <br>
+                
+          
                 <input type="reset" id="reset_l" value="Réinitialisation">
+
+                <button type="submit" id="submit">Connexion</button>
                 
             </fieldset>
 
-            <button type="submit" id="submit">Connexion</button>
+            
         </form>
         
     </div>

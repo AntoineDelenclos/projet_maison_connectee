@@ -29,7 +29,7 @@ mysqli_free_result($result_2);
 
 if ($uid==$_SESSION['uid']){
     if($pwd==$_SESSION['pwd']){
-        header("Location: ./index.php?login=success");
+        header("Location: ./profile_page.php?login=success");
     }
     else{
         header("Location: ./login.php?login=error");

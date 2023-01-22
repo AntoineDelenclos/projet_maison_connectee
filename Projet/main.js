@@ -13,7 +13,7 @@ document.getElementById("eye").addEventListener("click", function(e){ //Switcher
 
 
 document.getElementById("eye_s").addEventListener("click", function(e){ //Switcher pour afficher/masquer le password
-    var Password = document.getElementById("pwd_si");
+    var Password = document.getElementById("pwd");
     var Password_confirm = document.getElementById("cfrm_pwd");
     if (Password.getAttribute("type")=="password"){
         Password.setAttribute("type","text");
@@ -24,7 +24,6 @@ document.getElementById("eye_s").addEventListener("click", function(e){ //Switch
         Password_confirm.setAttribute("type","password");
     }
 });
-
 
 
 

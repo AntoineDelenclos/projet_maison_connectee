@@ -1,7 +1,7 @@
-
 <?php session_start();?>
 <?php include 'bdd_connect.php';?>
-<?php include 'header_page.php';?>
+
+<?php include 'main_page_online.php';?>
 
 
 <!DOCTYPE html>
@@ -15,55 +15,47 @@
     <title>Maison Connectée</title>
 </head>
 
+    
+
 <body>
-
+    
     <?php
-    $uid_bdd=$_SESSION['uid'];
-    $sql_p="SELECT Prenom, Nom, Date_naissance, Email, Tel, Genre, Est_admin, Etat_cpt, Date_creation_cpt FROM UTILISATEUR WHERE Nom_utilisateur='$uid_bdd';";
+    $uid_bdd = $_SESSION['uid'];
+    $sql_p="SELECT Prenom, Nom, Date_naissance, Email, 
+    Tel, Genre, Date_creation_cpt 
+    FROM UTILISATEUR 
+    WHERE Nom_utilisateur='$uid_bdd';";
     $result_p=mysqli_query($con,$sql_p);
-
     mysqli_data_seek($result_p,0);
     $row_p=mysqli_fetch_row($result_p);
 
-    $_SESSION['first_name']=$row_p[0];
-    $_SESSION['last_name']=$row_p[1];
-    $_SESSION['birth_date']=$row_p[2];
-    $_SESSION['Email']=$row_p[3];
-    $_SESSION['Tel']=$row_p[4];
-    $_SESSION['Genre']=$row_p[5];
-    $_SESSION['Est_admin']=$row_p[6];
-    $_SESSION['Etat_cpt']=$row_p[7];
-    $_SESSION['Date_creation_cpt']=$row_p[8];
+    if($row_p[5] == 1)
+    {
+        printf("Vos informations personnelles :<br />
+        Prénom : %s <br />
+        Nom : %s <br />
+        Date de naissance : %s <br />
+        Email : %s <br />
+        Numéro de téléphone : %s <br />
+        Genre : %s <br />
+        Date de création du compte : %s <br />", $row_p[0],
+        $row_p[1], $row_p[2], $row_p[3], 
+        $row_p[4], "Homme", $row_p[6]);
 
+    }
+    else
+    {
+        printf("Vos informations personnelles :<br />
+        Prénom : %s <br />
+        Nom : %s <br />
+        Date de naissance : %s <br />
+        Email : %s <br />
+        Numéro de téléphone : %s <br />
+        Genre : %s <br />
+        Date de création du compte : %s <br />", $row_p[0],
+        $row_p[1], $row_p[2], $row_p[3], 
+        $row_p[4], "Femme", $row_p[6]);
+    }
     mysqli_free_result($result_p);
 
     ?>
-
-
-
-    <a href="index.php">
-        <header>
-            
-        </header>
-    </a>
-
-    <div>
-    <?php echo $_SESSION['first_name'];?><br>
-    <?php echo $_SESSION['last_name'];?><br>
-    <?php echo $_SESSION['birth_date'];?><br>
-    <?php if ($_SESSION['uid']!=NULL){
-        if ($_SESSION['Genre']==0){
-            echo "Homme";
-        }
-        else{
-            echo "Femme";
-        }
-    }?><br>
-    <?php echo $_SESSION['Email'];?><br>
-    <?php echo $_SESSION['Tel'];?><br>
-    <?php echo $_SESSION['Est_admin'];?><br>
-    <?php echo $_SESSION['Etat_cpt'];?><br>
-    <?php echo $_SESSION['Date_creation_cpt'];?><br>
-    <?php echo $_SESSION['uid'];?><br>
-    <?php echo $_SESSION['pwd'];?><br>
-    </div>
