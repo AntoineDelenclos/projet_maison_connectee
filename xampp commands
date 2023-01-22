@@ -1,8 +1,0 @@
-cd /opt/lampp/
-sudo ./xampp start
-sudo ./xampp stop
-
-si erreur avec mysql :
-
-sudo /etc/init.d/mysql stop
-sudo /opt/lampp/lampp restart
