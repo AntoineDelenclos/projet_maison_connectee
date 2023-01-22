@@ -27,11 +27,12 @@ $statusMsg='';
 // File upload path
 $targetDir = getcwd()."/plans_appart".DIRECTORY_SEPARATOR;
 
-$fileName = "User_".basename($Id_user)."_Plan_appart_".$count_appart;
+$fileType = pathinfo(basename($_FILES["fichier_photo"]["name"]),PATHINFO_EXTENSION); //Donne l'extension du fichier uploadé
+$fileName = "User_".basename($Id_user)."_Plan_appart_".$count_appart.$fileType;
 echo $_FILES["fichier_photo"]["tmp_name"];
 $targetFilePath = $targetDir.$fileName;
-$fileType = pathinfo(basename($_FILES["fichier_photo"]["name"]),PATHINFO_EXTENSION); //Donne l'extension du fichier uploadé
 echo "fichier : ".$fileType;
+
 
 $image=addslashes(file_get_contents($_FILES["fichier_photo"]["tmp_name"]));
 

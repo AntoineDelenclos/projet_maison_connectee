@@ -1,11 +1,6 @@
 <?php session_start();?>
 <?php include 'bdd_connect.php';?>
 
-<?php
-$sql="INSERT INTO SUBSTANCE (Nom_substance,Min_substance,Max_substance,Crit_substance,Ideal_substance) VALUES ('Truc',8,4,3,3);";
-mysqli_query($con,$sql);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,39 +12,14 @@ mysqli_query($con,$sql);
     <title>Maison Connectée</title>
 </head>
 
+<body>
+    <a href="index.php">
+    <header>
+        <p>Maison Connectée</p>
+    </header>
+    </a>
 
-<body> 
-
-        <header>
-            <a href="index.php">
-                <p>Maison Connectée</p>
-            </a>
-        </header>
-    
-
-    <div>
-
-        <a href="login.php">
-            <button id="Connect_index" type="button">Se connecter</button>
-        </a>
-
-        <a href="sign_in.php">
-            <button id="Sign_in_index" type="button">S'inscrire</button>
-        </a>
-
-        <a href="disconnect.php">
-            <button id="Disconnect_index" type="button">Déconnexion</button>
-        </a>
-
-        <a href="profile_page.php">
-            <button id="Profile_page_index" type="button">Profil</button>
-        </a>
-
-        <a href="debug.php">
-            <button id="Debug_page" type="button">Debug</button>
-        </a>
-    
-        <div class = "box" id = "v1">
+    <div class = "box" id = "v1">
         <p>Conseils écologiques</p>
         <fieldset>
                 <legend>Sur l'utilisation de ses propres appareils</legend>
@@ -116,12 +86,4 @@ mysqli_query($con,$sql);
             </fieldset>
         </p>
     </div>
-        
-    </div>
-
-    <footer>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ratione rerum illum vero assumenda aperiam deserunt sequi ea repellendus, sint mollitia numquam. Maxime unde dolorum quam consequatur magni voluptas reprehenderit.
-    </footer>
-    
 </body>
-</html>

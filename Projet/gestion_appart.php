@@ -59,7 +59,7 @@
                 $sql="SELECT * FROM IMAGES NATURAL JOIN APPARTEMENT NATURAL JOIN ADRESSE WHERE Id_user='$Id_user';";
                 $result=mysqli_query($con,$sql);
                 $rows=mysqli_fetch_all($result,MYSQLI_ASSOC);
-                $cnt=1;
+                $cnt=1; //Compteur du nombre d'appartement 
                 foreach($rows as $row)
                 {
                     ?>
@@ -70,6 +70,14 @@
                         echo '<img src="data:image/png;base64,'.base64_encode($row["Blob_image"]).'"/>';
                         //echo "projet_maison_connectee/plans_appart".DIRECTORY_SEPARATOR."User_".basename($Id_user)."_Plan_appart_2".".png";
                         ?></td>
+                        <td><a href="modif_appart.php">
+                            <?php $_SESSION['id_app']=$cnt;?>
+                                <button id="modif" type="submit">Modifier</button>
+                            </a>
+                            <br>
+                            <a href="consult_appart.php">
+                                <button id="consult_appart" type="button">Consulter</button>
+                            </a>
                     </tr>
                     <?php
                     $cnt=$cnt+1;
@@ -77,14 +85,6 @@
                     ?>
             </tbody>
         </table>
-        <!--
-        <button id="appart_1">Consulter l'appartement n°1</button>
-        
-        A supprimer
-        
-        <canvas id="tuto" width=150 height=200>
-            <img src="https://img.freepik.com/vecteurs-libre/belle-maison_24877-50819.jpg?w=2000" width=150 height=200 alt="Maison si canvas pas supporté">
-        </canvas>-->
     </div>
 
 </body>
