@@ -40,13 +40,41 @@
             <tbody>
                 <?php
                 $uid_pp=$_SESSION['uid'];
-                $sql="SELECT * FROM IMAGES NATURAL JOIN APPARTEMENT WHERE "
+                $sql_0="SELECT Id_user FROM UTILISATEUR WHERE Nom_utilisateur='$uid_pp';";
+                $result_0=mysqli_query($con,$sql_0);
+                mysqli_data_seek($result_0,0);
+                $row_0=mysqli_fetch_row($result_0);
+                $Id_user=$row_0[0];
+                mysqli_free_result($result_0);
 
-                ?>
+                $sql_capp="SELECT COUNT(*) FROM APPARTEMENT WHERE Id_user='$Id_user';";
+                $result_capp=mysqli_query($con,$sql_capp);
 
-                <tr>
-                    <td>
-                </tr>
+                mysqli_data_seek($result_capp,0);
+                $row_capp=mysqli_fetch_row($result_capp);
+                $count_appart=$row_capp[0];
+                echo "count_appart :".$count_appart;
+                mysqli_free_result($result_capp);
+
+                $sql="SELECT * FROM IMAGES NATURAL JOIN APPARTEMENT NATURAL JOIN ADRESSE WHERE Id_user='$Id_user';";
+                $result=mysqli_query($con,$sql);
+                $rows=mysqli_fetch_all($result,MYSQLI_ASSOC);
+                $cnt=1;
+                foreach($rows as $row)
+                {
+                    ?>
+                    <tr>
+                        <td><?php echo $cnt;?></td>
+                        <td><?php echo $row["Num_maison"]." ".$row["Rue"].", ".$row["Ville"].", ".$row["CP"];?></td>
+                        <td><?php 
+                        echo '<img src="data:image/png;base64,'.base64_encode($row["Blob_image"]).'"/>';
+                        //echo "projet_maison_connectee/plans_appart".DIRECTORY_SEPARATOR."User_".basename($Id_user)."_Plan_appart_2".".png";
+                        ?></td>
+                    </tr>
+                    <?php
+                    $cnt=$cnt+1;
+                    }
+                    ?>
             </tbody>
         </table>
         <!--

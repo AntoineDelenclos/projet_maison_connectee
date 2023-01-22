@@ -50,6 +50,10 @@ CREATE TABLE ADRESSE (
 
     Num_maison INT(11) NOT NULL,
 
+    Id_user INT(11) NOT NULL,
+
+    FOREIGN KEY (Id_user) REFERENCES UTILISATEUR (Id_user),
+
     PRIMARY KEY (Id_adresse) 
 
 ); 
