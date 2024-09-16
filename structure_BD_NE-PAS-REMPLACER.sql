@@ -60,7 +60,7 @@ CREATE TABLE RESSOURCE (
 
     Id_ressource INT(11) NOT NULL AUTO_INCREMENT, 
 
-    Nom_ressource VARCHAR(60)NOT NULL,
+    Nom_ressource VARCHAR(60) NOT NULL,
 
     Min_ressource FLOAT(15) NOT NULL,
 
@@ -118,9 +118,9 @@ CREATE TABLE LOCATION(
 
     Id_location INT(11) NOT NULL AUTO_INCREMENT, 
 
-    Debut_location DATE NOT NULL, 
+    Debut_location DATE, 
 
-    Fin_location DATE NOT NULL,
+    Fin_location DATE,
 
     PRIMARY KEY(Id_location)
 
@@ -132,9 +132,9 @@ CREATE TABLE POSSESSION(
 
     Id_possession INT(11) NOT NULL AUTO_INCREMENT,
 
-    Debut_possession DATE NOT NULL,
+    Debut_possession DATE,
 
-    Fin_possession DATE NOT NULL,
+    Fin_possession DATE,
 
     PRIMARY KEY (Id_possession)
 );
@@ -175,9 +175,9 @@ CREATE TABLE APPARTEMENT(
 
     Id_user INT(11) NOT NULL,
 
-    Id_possession INT(11) NOT NULL,
+    Id_possession INT(11),
 
-    Id_location INT(11) NOT NULL,
+    Id_location INT(11),
 
     FOREIGN KEY (Id_adresse) REFERENCES ADRESSE (Id_adresse),
 
@@ -191,27 +191,6 @@ CREATE TABLE APPARTEMENT(
 
     PRIMARY KEY (Id_appart)
 
-);
-
-
-
-CREATE TABLE IMAGES(
-
-    Id_image INT(11) NOT NULL AUTO_INCREMENT,
-
-    Nom_image VARCHAR(50) NOT NULL,
-
-    Taille_image VARCHAR(25) NOT NULL,
-
-    Type_image VARCHAR(25) NOT NULL,
-
-    Descript_image VARCHAR(100) NOT NULL,
-
-    Blob_image BLOB NOT NULL,
-
-    Ajout_image DATE NOT NULL,
-
-    PRIMARY KEY (Id_image)
 );
 
 
@@ -235,16 +214,23 @@ CREATE TABLE APPAREIL (
 );
 
 
+CREATE TABLE Consommation
+(
+   Id_conso INT AUTO_INCREMENT,
 
-CREATE TABLE UTILISATION(
+   Conso_kWh DOUBLE,
 
-    Id_ressource INT(11) NOT NULL,
+   Duree_conso_en_h DECIMAL(15,2),
 
-    Id_appareil INT(11) NOT NULL,
+   Date_conso DATE,
 
-    FOREIGN KEY (Id_ressource) REFERENCES RESSOURCE (Id_ressource),
+   Id_Ressource INT NOT NULL,
 
-    FOREIGN KEY (Id_appareil) REFERENCES APPAREIL (Id_appareil),
+   Id_Appareil INT NOT NULL,
 
-    PRIMARY KEY (Id_ressource,Id_appareil)
+   PRIMARY KEY(Id_conso),
+
+   FOREIGN KEY(Id_Ressource) REFERENCES Ressource(Id_Ressource),
+
+   FOREIGN KEY(Id_Appareil) REFERENCES Appareil(Id_Appareil)
 );

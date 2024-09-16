@@ -23,7 +23,7 @@
 
     <div>
         
-        <p>Veuillez bien vous connecter</p>
+        <p>Veuillez vous connecter</p>
         <form method="POST" action="login_treatment.php">
             <fieldset>
                 <label for="uid">Nom d'utilisateur</label>
@@ -34,9 +34,6 @@
 
                 <button type="button" id="eye">Afficher</button>
                 <br>
-                <br>
-                <input type="reset" id="reset_l" value="Réinitialisation du formulaire de connexion">
-                
             </fieldset>
 
             <button type="submit" name="submit">Connexion</button>
@@ -48,6 +45,6 @@
     <footer>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ratione rerum illum vero assumenda aperiam deserunt sequi ea repellendus, sint mollitia numquam. Maxime unde dolorum quam consequatur magni voluptas reprehenderit.
     </footer>
+    <?php 
     
-</body>
-</html>
+    ?>

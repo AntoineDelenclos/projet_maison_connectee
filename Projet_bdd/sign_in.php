@@ -79,19 +79,16 @@
                 <label for="cfrm_pwd">Confirmer votre mot de passe</label>
                 <input class="chatbox" type="password" id="cfrm_pwd" name="cfrm_pwd" required placeholder="Confirmer" size="15">
                 <button type="button" id="eye">Afficher</button>
-                <br>
-                <br>
-                <input type="reset" id="reset_s" value="Réinitialisation du formulaire d'inscription">
                
             </fieldset>
             <?php $_SESSION['uid']="Moi";?>
             <button type="submit" name="submit">Valider et créer le compte</button> <!--Utilise la methode décrite dans form-->
         </form>
-        <p>Les champs avec la mention (*) sont obligatoires pour finaliser l'inscription</p>
+        <p>Les champs avec la mention (*) sont obligatoires pour finaliser l'inscription.</p>
     </div>
 
     <footer>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ratione rerum illum vero assumenda aperiam deserunt sequi ea repellendus, sint mollitia numquam. Maxime unde dolorum quam consequatur magni voluptas reprehenderit.
+        Hello world! ^-^
     </footer>
     
 </body>
